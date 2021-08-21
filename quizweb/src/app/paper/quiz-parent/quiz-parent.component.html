@@ -1,0 +1,38 @@
+<button class="btn btn-primary" (click)="playQuiz()">Play Quiz</button>
+<div class="card" *ngIf="quizStartFlag==true">
+    <div class="card-body">
+
+        <div>
+            {{qdata.question}}
+        </div>
+    <br/>
+        <div> 
+                <button clas="btn  col-2" style="padding: 5px; background-color: {{option1Bg}}" value="{{qdata.option1}}" (click)="submitAnsOption1(qdata.option1)">{{qdata.option1}}</button>
+                        &nbsp;&nbsp;
+                <button clas="btn  col-2" style="padding: 5px;background-color: {{option2Bg}}" (click)="submitAnsOption2(qdata.option2)">{{qdata.option2}}</button>
+                &nbsp;&nbsp;
+
+        </div>
+        <br/>
+
+        <div> 
+            <button clas="btn col-2 " style="padding: 5px;background-color: {{option3Bg}}" (click)="submitAnsOption3(qdata.option3)">{{qdata.option3}}</button>
+                    &nbsp;&nbsp;
+            <button clas="btn col-2 " style="padding: 5px;background-color: {{option4Bg}}" (click)="submitAnsOption4(qdata.option4)">{{qdata.option4}}</button>
+            &nbsp;&nbsp;
+
+    </div>
+
+
+    <br/>
+    <br/>
+
+    <div>
+
+        <button class="btn btn-info " [disabled]="!answerSelectedFlag"(click)="validateAns()"> Submit</button>
+    </div>
+
+
+
+    </div>
+</div>
